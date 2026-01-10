@@ -1,0 +1,4 @@
+xterm*background: black
+xterm*foreground:white
+xterm*geometry: 90x24
+XTerm*selectToClipboard: true
