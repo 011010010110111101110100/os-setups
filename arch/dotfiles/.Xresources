@@ -1,0 +1,7 @@
+Xft.dpi: 85
+xterm*background: black
+xterm*foreground: white
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: false
+XTerm.vt100.utf8: true
+XTerm.vt100.backarrowKey: false
