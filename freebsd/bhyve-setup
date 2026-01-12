@@ -33,7 +33,15 @@ pass from { self, $localnet } to any keep state
 
 7. Enable PF services
 doas service pf enable
-doas service pf start
+doas service pf start'
+
+8. Setting up DHCP
+# /usr/local/etc/dnsmasq.conf
+listen-address=192.168.8.1
+bind-interfaces
+dhcp-range=192.168.8.10,192.168.8.100,12h
+dhcp-option=option:router,192.168.8.1
+dhcp-option=option:dns-server,9.9.9.9,149.112.112.112
     
 (Sometimes need to add console=ttyS0 to grub for serial console install)
 
