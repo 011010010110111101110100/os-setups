@@ -1,0 +1,43 @@
+1. Install the bhyve vm manager
+doas pkg install vm-bhyve
+
+2. Enable the necessary kernel modules:
+# etc /boot/loader.conf
+vmm_load="YES"
+nmdm_load="YES"
+if_bridge_load="YES"
+if_tap_load="YES"
+
+3. Enable the service:
+# /etc/rc.conf
+vm_enable="YES"
+vm_dir="/vm"
+gateway_enable="YES"
+pf_enable="YES"
+
+4. Initialize
+doas vm init
+doas cp /usr/local/share/examples/vm-bhyve/* /zroot/vm/.templates/
+
+5. Create the NAT switch
+doas vm switch create public
+doas vm switch address public 192.168.8.1/24
+
+6. Configure firewall
+# /etc/pf.conf
+ext_if="wifibox0"
+vm_bridge="vm-public"
+localnet="192.168.8.0/24"
+nat on $ext_if from $localnet to any -> ($ext_if)
+pass from { self, $localnet } to any keep state
+
+7. Enable PF services
+doas service pf enable
+doas service pf start
+    
+(Sometimes need to add console=ttyS0 to grub for serial console install)
+
+Setup Static IP:
+IP Address: 192.168.8.2
+Netmask: 255.255.255.0
+Gateway: 192.168.8.1
