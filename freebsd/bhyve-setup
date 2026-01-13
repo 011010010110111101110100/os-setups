@@ -58,6 +58,7 @@ Gateway: 192.168.8.1
 RDP/VNC Client
 doas pkg install remmina freerd
 
+# Add to VM config
 graphics="yes"
 graphics_listen="127.0.0.1"
 graphics_port="5900"
