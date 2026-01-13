@@ -54,3 +54,10 @@ Setup Static IP:
 IP Address: 192.168.8.2
 Netmask: 255.255.255.0
 Gateway: 192.168.8.1
+
+RDP/VNC Client
+doas pkg install remmina freerd
+
+graphics="yes"
+graphics_listen="127.0.0.1"
+graphics_port="5900"
