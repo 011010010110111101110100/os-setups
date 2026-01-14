@@ -1,22 +1,35 @@
 1. Compile pipewire with alsa and pluseaudio support
 cd /usr/ports/multimedia/pipewire
 doas make config
+# ENABLE PULSEAUDIO AND ALSA
 doas make deinstall install clean
 doas pkg install alsa-plugins
 
-2. Stop pulseaudio from auto spawning and kill old processes
+2. Compile rtkit
+cd /usr/ports/sysutils/rtkit-unix
+doas make install clean
+
+3. Stop pulseaudio from auto spawning and kill old processes
 echo "autospawn = no" > ~/.config/pulse/client.conf
 pulseaudio --kill; killall -9 pulseaudio
 
-3. Add services in .xinit and wrap wm/de in DBus session
+4. Add services in .xinit and wrap wm/de in DBus session
 /usr/local/bin/pipewire &
 /usr/local/bin/wireplumber &
 /usr/local/bin/pipewire-pulse &
 exec dbus-launch --exit-with-session wmaker
 
-4. Configure DBus
+5. Configure DBus
 doas sysrc dbus_enable="YES"
 doas service dbus start
 
+6. Reboot
+
 Fix Audio in Firebox based browsers:
 about:config > media.cubeb.backend > string: pulse-rust
+
+Fix Audio in VLC:
+cd /usr/ports/multimedia/vlc
+doas make config 
+# ENABLE PLUSEAUDIO AND ALSA SUPPORT
+doas make reinstall clean
