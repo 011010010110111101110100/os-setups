@@ -1,0 +1,22 @@
+1. Compile pipewire with alsa and pluseaudio support
+cd /usr/ports/multimedia/pipewire
+doas make config
+doas make deinstall install clean
+doas pkg install alsa-plugins
+
+2. Stop pulseaudio from auto spawning and kill old processes
+echo "autospawn = no" > ~/.config/pulse/client.conf
+pulseaudio --kill; killall -9 pulseaudio
+
+3. Add services in .xinit and wrap wm/de in DBus session
+/usr/local/bin/pipewire &
+/usr/local/bin/wireplumber &
+/usr/local/bin/pipewire-pulse &
+exec dbus-launch --exit-with-session wmaker
+
+4. Configure DBus
+doas sysrc dbus_enable="YES"
+doas service dbus start
+
+Fix Audio in Firebox based browsers:
+about:config > media.cubeb.backend > string: pulse-rust
