@@ -1,13 +1,13 @@
 # Volume Up
-"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+"wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
     XF86AudioRaiseVolume
 
 # Volume Down
-"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"wpctl set-volume  @DEFAULT_AUDIO_SINK@ 5%-"
     XF86AudioLowerVolume
 
 # Volume Mute
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         XF86AudioMute
 
 # Brightness Down
