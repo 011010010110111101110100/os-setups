@@ -8,7 +8,7 @@ pkg install dejavu liberation-fonts-ttf noto-basic noto-emoji noto-extra webfont
 
 EXTRAS: 
 
-pkg install vscode kleopatra telegram-desktop signal-desktop prismlauncher
+pkg install vscode kleopatra signal-desktop prismlauncher tor-browser nmap remmina freerdp
 
 touch /usr/local/etc/doas.conf ; echo -e "permit nopass :wheel" > /usr/local/etc/doas.conf
 
