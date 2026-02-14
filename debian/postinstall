@@ -1,6 +1,6 @@
 apt install xorg xinit xterm wmaker libfuse2 brightnessctl cpupower-gui lxappearence flameshot thunar mousepad mate-polkit polkitd
 
-apt install libfontconfig1 fonts-noto-color-emoji fonts-symbola fonts-wqy-zenhei xfonts-wqy fonts-noto fontconfig
+apt install fontconfig libfontconfig1 fonts-noto-color-emoji fonts-symbola fonts-wqy-zenhei xfonts-wqy fonts-noto fonts-liberation
 
 dpkg-reconfigure fontconfig
 fc-cache -f -v
