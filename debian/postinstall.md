@@ -1,4 +1,6 @@
-sudo apt install xterm i3 i3status i3blocks rofi feh libfuse2 fonts-noto-color-emoji fonts-symbola fonts-wqy-zenhei xfonts-wqy fonts-noto fontconfig libfontconfig1 brightnessctl cpupower-gui lxappearence flameshot
+apt install xorg xinit xterm wmaker libfuse2 libfontconfig1 brightnessctl cpupower-gui lxappearence flameshot thunar mousepad mate-polkit
 
-sudo dpkg-reconfigure fontconfig
-sudo fc-cache -f -v
+apt install fonts-noto-color-emoji fonts-symbola fonts-wqy-zenhei xfonts-wqy fonts-noto fontconfig
+
+dpkg-reconfigure fontconfig
+fc-cache -f -v
