@@ -1,4 +1,4 @@
-apt install xorg xinit xterm wmaker libfuse2 brightnessctl cpupower-gui lxappearence flameshot thunar mousepad mate-polkit polkitd
+apt install xorg xinit xterm wmaker libfuse2 brightnessctl cpupower-gui lxappearence flameshot thunar mousepad mate-polkit polkitd fastfetch hyfetch file-roller xbindkeys htop btop filezilla vlc git gnome-themes-extra lxappearance
 
 apt install fontconfig libfontconfig1 fonts-noto-color-emoji fonts-symbola fonts-wqy-zenhei xfonts-wqy fonts-noto fonts-liberation
 
