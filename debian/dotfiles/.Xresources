@@ -1,4 +1,7 @@
 xterm*background: black
-xterm*foreground: white
-xterm*geometry: 90x24
+xterm*foreground:white
+xterm*geometry: 91x25
 XTerm*selectToClipboard: true
+XTerm*bellIsUrgent: true
+XTerm*visualBell: false
+XTerm*allowWindowOps: true
