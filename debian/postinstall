@@ -1,6 +1,6 @@
 Packages:
 
-apt install xorg xinit xterm wmaker libfuse2 brightnessctl flameshot thunar thunar-archive-plugin mousepad mate-polkit polkitd fastfetch hyfetch xarchiver xbindkeys htop btop filezilla vlc git gnome-themes-extra lxappearance pipewire pipewire-pulse pavucontrol xscreensaver
+apt install xorg xinit xterm wmaker libfuse2 brightnessctl flameshot thunar thunar-archive-plugin mousepad mate-polkit polkitd fastfetch hyfetch xarchiver xbindkeys htop btop filezilla vlc git gnome-themes-extra lxappearance pipewire pipewire-pulse pavucontrol xscreensaver gvfs-backends gvfs-fuse smbclient cifs-util linux-cpupower
 
 apt install fontconfig libfontconfig1 fonts-noto-color-emoji fonts-symbola fonts-wqy-zenhei xfonts-wqy fonts-noto fonts-liberation fonts-font-awesome
 
