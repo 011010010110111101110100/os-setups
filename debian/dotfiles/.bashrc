@@ -2,8 +2,16 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+alias cpudef="doas sh -c 'echo 1 > /sys/devices/system/cpu/cpufreq/boost' && doas cpupowerfrequency-set -g powersave"
+alias cpump="doas sh -c 'echo 1 > /sys/devices/system/cpu/cpufreq/boost' && doas cpupower frequency-set -g performance"
+alias cpulp="doas sh -c 'echo 0 > /sys/devices/system/cpu/cpufreq/boost' && doas cpupower frequency-set -g powersave"
 alias torssh='torsocks ssh'
 alias tornc='torsocks nc'
+
+complete -F _command doas
+
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/sbin
 
 # If not running interactively, don't do anything
 case $- in
@@ -117,5 +125,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
-export PATH=$PATH:/usr/sbin
